@@ -1,0 +1,11 @@
+#!name=CAT
+#!desc=CAT
+
+[Script]
+
+CA= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers\/[^\/]+$|receipts$),script-path=https://latenci9.github.io/cat.js
+CT= type=http-request,requires-body=0,pattern=^https?:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers\/[^\/]+$|receipts$),script-path=https://latenci9.github.io/cat.js
+
+[MITM]
+
+hostname = %APPEND% api.revenuecat.com, api.rc-backup.com
