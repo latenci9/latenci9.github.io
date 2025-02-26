@@ -1,0 +1,11 @@
+#!name=RC2
+
+#!desc=RC2
+
+[MITM]
+
+hostname = %APPEND% api.rc-backup.com
+
+[Script]
+
+Percento=type=http-response,pattern=^https?:\/\/api\.rc-backup\.com\/v1\/(receipts|subscribers\/\$RCAnonymousID%3A\w{32})$,requires-body=1,script-path=https://latenci9.github.io/rc.js
